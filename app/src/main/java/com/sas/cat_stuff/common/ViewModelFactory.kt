@@ -2,7 +2,6 @@ package com.sas.cat_stuff.common
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.sas.cat_stuff.BaseAndroidVM
 
 object ViewModelFactory : ViewModelProvider.NewInstanceFactory() {
 

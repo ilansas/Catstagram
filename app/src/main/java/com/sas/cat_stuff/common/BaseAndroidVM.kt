@@ -1,8 +1,9 @@
-package com.sas.cat_stuff
+package com.sas.cat_stuff.common
 
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
+import com.sas.cat_stuff.CatApplication
 
 open class BaseAndroidVM : AndroidViewModel(CatApplication.APP) {
 
