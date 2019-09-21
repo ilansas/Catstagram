@@ -7,6 +7,8 @@ import com.sas.cat_stuff.CatApplication
 
 open class BaseAndroidVM : AndroidViewModel(CatApplication.APP) {
 
+    fun getContext() = getApplication<CatApplication>()
+
     inline fun <D, Y> LiveData<D>.map(crossinline func: (d: D) -> Y): LiveData<Y> =
         Transformations.map(this) { func(it) }
 }
