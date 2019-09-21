@@ -9,8 +9,10 @@ import com.sas.cat_stuff.R
 import com.sas.cat_stuff.card.CatCardVM
 import com.sas.cat_stuff.common.ViewModelFactory
 import com.sas.cat_stuff.databinding.ActivityMainBinding
+import com.sas.cat_stuff.databinding.CatCardBinding
+import com.sas.cat_stuff.util.pop
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
@@ -30,11 +32,25 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         viewModel.images.observe(this, Observer { images ->
             if (images != null && images.size == 3) {
-                binding.firstCat.vm = CatCardVM().apply { setData(images[0]) }
-                binding.secondCat.vm = CatCardVM().apply { setData(images[1]) }
-                binding.thirdCat.vm = CatCardVM().apply { setData(images[2]) }
+                binding.firstCat.vm = CatCardVM().apply {
+                    onDoubleClickListener = this@MainActivity
+                    setData(images[0])
+                }
+                binding.secondCat.vm = CatCardVM().apply {
+                    onDoubleClickListener = this@MainActivity
+                    setData(images[1])
+                }
+                binding.thirdCat.vm = CatCardVM().apply {
+                    onDoubleClickListener = this@MainActivity
+                    setData(images[2])
+                }
             }
         })
         viewModel.downloadRandomCatImages()
+    }
+
+    override fun onDoubleClick(view: DoubleClickCardView) {
+        val bind = DataBindingUtil.getBinding<CatCardBinding>(view)
+        bind?.heart?.pop()
     }
 }
