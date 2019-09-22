@@ -1,9 +1,8 @@
-package com.sas.cat_stuff.card
+package com.sas.cat_stuff.home.card
 
 import android.widget.Toast
 import com.sas.cat_stuff.R
 import com.sas.cat_stuff.common.BaseUpdatableVM
-import com.sas.cat_stuff.home.DoubleClickCardView
 import com.sas.cat_stuff.network.Requester
 import com.sas.data.model.Image
 import kotlinx.coroutines.CoroutineScope
@@ -22,7 +21,7 @@ class CatCardVM : BaseUpdatableVM<Image>() {
             onDoubleClickListener?.onDoubleClick(view)
 
             data.value?.id?.let { id ->
-                    CoroutineScope(Dispatchers.Main).launch {
+                CoroutineScope(Dispatchers.Main).launch {
                     val task = async(Dispatchers.IO) {
                         Requester.addImageToFavorite(id)
                     }

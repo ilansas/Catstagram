@@ -6,7 +6,8 @@ open class BaseUpdatableVM<T> : BaseAndroidVM() {
 
     val data = MutableLiveData<T>()
 
-    fun setData(obj: T) {
+    fun setData(obj: T?) {
+        obj ?: return
         data.value = obj
     }
 }

@@ -10,4 +10,6 @@ object Requester {
     suspend fun getImages() = CatApi.api.getImages()
 
     suspend fun addImageToFavorite(id: String) = CatApi.api.addImageToFavorite(AddFavorite(id))
+
+    suspend fun getFavorites(page: Int, limit: Int) = CatApi.api.getFavorites(page, limit)
 }

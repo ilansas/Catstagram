@@ -1,9 +1,6 @@
 package com.sas.data.retrofit
 
-import com.sas.data.model.AddFavorite
-import com.sas.data.model.Breed
-import com.sas.data.model.Image
-import com.sas.data.model.PostResult
+import com.sas.data.model.*
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -19,4 +16,8 @@ interface CatApiCalls {
 
     @POST("favourites")
     suspend fun addImageToFavorite(@Body addFavorite: AddFavorite): PostResult
+
+    @GET("favourites")
+    suspend fun getFavorites(@Query("page") page: Int, @Query("limit") limit: Int = 10): List<Favorite>
+
 }

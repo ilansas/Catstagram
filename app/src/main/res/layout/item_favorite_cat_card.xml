@@ -7,14 +7,13 @@
 
         <variable
             name="vm"
-            type="com.sas.cat_stuff.home.card.CatCardVM" />
+            type="com.sas.cat_stuff.likes.LikedCatVM" />
     </data>
 
-    <com.sas.cat_stuff.home.card.DoubleClickCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="5dp"
-        app:onDoubleClick="@{vm.onDoubleClick}">
+        app:cardCornerRadius="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,19 +27,18 @@
                 app:url="@{vm.imageUrl}"
                 tools:src="@drawable/ic_launcher_background" />
 
-            <ImageView
-                android:id="@+id/heart"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_heart"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!--<ImageView-->
+            <!--android:id="@+id/heart"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:src="@drawable/ic_heart"-->
+            <!--android:visibility="gone"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </com.sas.cat_stuff.home.card.DoubleClickCardView>
+    </androidx.cardview.widget.CardView>
 </layout>
