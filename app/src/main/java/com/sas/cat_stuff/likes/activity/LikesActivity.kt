@@ -3,6 +3,7 @@ package com.sas.cat_stuff.likes.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -31,6 +32,10 @@ class LikesActivity : AppCompatActivity() {
             lifecycleOwner = this@LikesActivity
         }
 
+        title = getString(R.string.my_likes)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         viewModel = ViewModelProviders.of(this, ViewModelFactory)[LikesViewModel::class.java]
 
         binding.vm = viewModel
@@ -39,11 +44,21 @@ class LikesActivity : AppCompatActivity() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = listAdapter
-            addItemDecoration(SpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.space_decoration), true, true))
+            addItemDecoration(SpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.space_decoration),
+                addSpaceFirstItem = true,
+                addSpaceLastItem = true
+            ))
         }
 
         viewModel.favoriteList.observe(this, Observer {
             listAdapter.submitList(it)
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == android.R.id.home) {
+            onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
