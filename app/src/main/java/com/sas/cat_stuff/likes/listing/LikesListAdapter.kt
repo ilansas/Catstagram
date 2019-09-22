@@ -1,4 +1,4 @@
-package com.sas.cat_stuff.likes.paging
+package com.sas.cat_stuff.likes.listing
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

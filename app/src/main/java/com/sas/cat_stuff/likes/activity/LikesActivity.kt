@@ -9,9 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sas.cat_stuff.R
+import com.sas.cat_stuff.common.listing.SpaceItemDecoration
 import com.sas.cat_stuff.common.viewmodel.ViewModelFactory
 import com.sas.cat_stuff.databinding.ActivityLikesBinding
-import com.sas.cat_stuff.likes.paging.LikesListAdapter
+import com.sas.cat_stuff.likes.listing.LikesListAdapter
 import com.sas.cat_stuff.likes.viewmodel.LikesViewModel
 
 class LikesActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class LikesActivity : AppCompatActivity() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = listAdapter
+            addItemDecoration(SpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.space_decoration), true, true))
         }
 
         viewModel.favoriteList.observe(this, Observer {
