@@ -18,7 +18,6 @@ import com.sas.cat_stuff.likes.activity.LikesActivity
 import com.sas.cat_stuff.util.pop
 
 
-
 class HomeActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener {
 
     private lateinit var viewModel: HomeViewModel
@@ -33,10 +32,7 @@ class HomeActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener {
         viewModel = ViewModelProviders.of(this, ViewModelFactory)[HomeViewModel::class.java]
 
         binding.vm = viewModel
-    }
 
-    override fun onStart() {
-        super.onStart()
         viewModel.images.observe(this, Observer { images ->
             if (images != null && images.size == 3) {
                 binding.firstCat.vm = CatCardVM().apply {
@@ -53,6 +49,7 @@ class HomeActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener {
                 }
             }
         })
+
         viewModel.downloadRandomCatImages()
     }
 
