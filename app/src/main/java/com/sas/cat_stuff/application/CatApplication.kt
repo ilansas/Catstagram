@@ -1,4 +1,4 @@
-package com.sas.cat_stuff
+package com.sas.cat_stuff.application
 
 import android.app.Application
 

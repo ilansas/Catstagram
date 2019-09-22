@@ -1,4 +1,4 @@
-package com.sas.cat_stuff.home.card
+package com.sas.cat_stuff.home.card.view
 
 import android.content.Context
 import android.util.AttributeSet

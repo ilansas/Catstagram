@@ -7,10 +7,10 @@
 
         <variable
             name="vm"
-            type="com.sas.cat_stuff.home.card.CatCardVM" />
+            type="com.sas.cat_stuff.home.card.viewmodel.CatCardVM" />
     </data>
 
-    <com.sas.cat_stuff.home.card.DoubleClickCardView
+    <com.sas.cat_stuff.home.card.view.DoubleClickCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="5dp"
@@ -42,5 +42,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </com.sas.cat_stuff.home.card.DoubleClickCardView>
+    </com.sas.cat_stuff.home.card.view.DoubleClickCardView>
 </layout>

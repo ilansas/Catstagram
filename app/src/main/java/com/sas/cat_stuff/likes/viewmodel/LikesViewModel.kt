@@ -1,9 +1,9 @@
-package com.sas.cat_stuff.likes
+package com.sas.cat_stuff.likes.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.sas.cat_stuff.common.BaseAndroidVM
+import com.sas.cat_stuff.common.viewmodel.BaseAndroidVM
 import com.sas.cat_stuff.likes.paging.FavoritesDataSourceFactory
 import com.sas.data.model.Favorite
 

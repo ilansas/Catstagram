@@ -1,4 +1,4 @@
-package com.sas.cat_stuff.likes
+package com.sas.cat_stuff.likes.activity
 
 import android.content.Context
 import android.content.Intent
@@ -9,9 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sas.cat_stuff.R
-import com.sas.cat_stuff.common.ViewModelFactory
+import com.sas.cat_stuff.common.viewmodel.ViewModelFactory
 import com.sas.cat_stuff.databinding.ActivityLikesBinding
 import com.sas.cat_stuff.likes.paging.LikesListAdapter
+import com.sas.cat_stuff.likes.viewmodel.LikesViewModel
 
 class LikesActivity : AppCompatActivity() {
 

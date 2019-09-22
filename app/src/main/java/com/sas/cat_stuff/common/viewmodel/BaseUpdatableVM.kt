@@ -1,4 +1,4 @@
-package com.sas.cat_stuff.common
+package com.sas.cat_stuff.common.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 

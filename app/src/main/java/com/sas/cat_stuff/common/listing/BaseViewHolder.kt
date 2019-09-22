@@ -1,4 +1,4 @@
-package com.sas.cat_stuff.likes.paging
+package com.sas.cat_stuff.common.listing
 
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle

@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.sas.cat_stuff.likes.LikedCatVM" />
+            type="com.sas.cat_stuff.likes.viewmodel.LikedCatVM" />
     </data>
 
     <androidx.cardview.widget.CardView

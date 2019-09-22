@@ -5,7 +5,7 @@
 
         <variable
             name="vm"
-            type="com.sas.cat_stuff.home.MainViewModel" />
+            type="com.sas.cat_stuff.home.viewmodel.HomeViewModel" />
 
     </data>
 
@@ -13,7 +13,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.MainActivity">
+        tools:context=".home.activity.HomeActivity">
 
 
         <include

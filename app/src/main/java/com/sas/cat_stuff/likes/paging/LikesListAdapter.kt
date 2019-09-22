@@ -2,9 +2,10 @@ package com.sas.cat_stuff.likes.paging
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.sas.cat_stuff.common.BaseUpdatableVM
+import com.sas.cat_stuff.common.viewmodel.BaseUpdatableVM
+import com.sas.cat_stuff.common.listing.BasePagedListAdapter
 import com.sas.cat_stuff.databinding.ItemFavoriteCatCardBinding
-import com.sas.cat_stuff.likes.LikedCatVM
+import com.sas.cat_stuff.likes.viewmodel.LikedCatVM
 import com.sas.cat_stuff.util.layoutInflater
 import com.sas.data.model.Favorite
 
