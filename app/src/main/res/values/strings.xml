@@ -5,4 +5,5 @@
     <string name="error_happened">Oups, une erreur est survenue !</string>
     <string name="likes">Likes</string>
     <string name="my_likes">Mes likes</string>
+    <string name="from_X">From : %s</string>
 </resources>

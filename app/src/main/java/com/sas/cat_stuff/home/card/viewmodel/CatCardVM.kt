@@ -14,8 +14,15 @@ import kotlinx.coroutines.launch
 class CatCardVM : BaseUpdatableVM<Image>() {
 
     var onDoubleClickListener: OnDoubleClickListener? = null
+    var onInfoClickListener: OnInfoClickListener? = null
 
     val imageUrl = data.map { it.url }
+
+    val infoButtonVisibility = data.map { !it.breeds.isNullOrEmpty() }
+
+    fun onInfoClick() {
+        onInfoClickListener?.onInfoClick(data.value)
+    }
 
     val onDoubleClick = object : DoubleClickCardView.OnDoubleClickListener {
         override fun onDoubleClick(view: DoubleClickCardView) {
@@ -39,5 +46,9 @@ class CatCardVM : BaseUpdatableVM<Image>() {
 
     interface OnDoubleClickListener {
         fun onDoubleClick(view: DoubleClickCardView)
+    }
+
+    interface OnInfoClickListener {
+        fun onInfoClick(image: Image?)
     }
 }
