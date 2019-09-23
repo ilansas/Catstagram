@@ -11,4 +11,4 @@ fun Context.scanForActivity(): AppCompatActivity? = when (this) {
     else -> null
 }
 
-fun Context.layoutInflater() = LayoutInflater.from(this)
+fun Context.layoutInflater(): LayoutInflater = LayoutInflater.from(this)

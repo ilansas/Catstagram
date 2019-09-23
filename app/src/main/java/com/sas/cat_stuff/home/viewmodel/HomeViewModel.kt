@@ -17,7 +17,5 @@ class HomeViewModel : BaseAndroidVM() {
         }
     }
 
-    fun onShowMeMoreButtonClick() {
-        downloadRandomCatImages()
-    }
+    fun onShowMeMoreButtonClick() = downloadRandomCatImages()
 }

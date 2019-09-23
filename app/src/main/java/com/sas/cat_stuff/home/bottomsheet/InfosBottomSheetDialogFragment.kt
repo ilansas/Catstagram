@@ -20,8 +20,9 @@ class InfosBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private var image: Image? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        image = BundleManager().from(this).extractImage()
         super.onCreate(savedInstanceState)
+        image = BundleManager().from(this).extractImage()
+        image ?: dismiss()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

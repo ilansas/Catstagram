@@ -6,6 +6,5 @@ data class PostResult(
     @SerializedName("message")
     val message: String
 ) {
-
     fun isSuccess() = message == "SUCCESS"
 }

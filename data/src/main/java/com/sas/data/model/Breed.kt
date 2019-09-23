@@ -20,4 +20,4 @@ data class Breed(
 
     @SerializedName("wikipedia_url")
     val wikipediaUrl: String? = null
-): Parcelable
+) : Parcelable

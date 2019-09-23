@@ -13,19 +13,20 @@ class CatApiBuilder {
     companion object {
         private const val CONNECT_TIMEOUT_MILLIS = 30 * 1000
         private const val READ_TIMEOUT_MILLIS = 20 * 1000
+
+        private const val BASE_URL = "https://api.thecatapi.com/v1/"
     }
 
     fun buildApi(): CatApiCalls {
         val httpClient = createBaseHttpBuilder().apply { addInterceptor(CatApiInterceptor()) }
 
         return Retrofit.Builder()
-            .baseUrl("https://api.thecatapi.com/v1/")
+            .baseUrl(BASE_URL)
             .client(httpClient.build())
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
             .create(CatApiCalls::class.java)
     }
-
 
     private fun createBaseHttpBuilder(): OkHttpClient.Builder {
         val builder = OkHttpClient.Builder()
@@ -36,7 +37,6 @@ class CatApiBuilder {
         return builder
     }
 
-
     private fun addTimeout(builder: OkHttpClient.Builder) {
         builder.connectTimeout(CONNECT_TIMEOUT_MILLIS.toLong(), TimeUnit.MILLISECONDS)
         builder.readTimeout(READ_TIMEOUT_MILLIS.toLong(), TimeUnit.MILLISECONDS)
@@ -45,7 +45,8 @@ class CatApiBuilder {
     private fun addLoggingInterceptor(builder: OkHttpClient.Builder) {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level =
-            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+            else HttpLoggingInterceptor.Level.NONE
         builder.interceptors().add(interceptor)
     }
 }

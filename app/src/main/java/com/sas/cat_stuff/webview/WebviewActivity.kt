@@ -13,6 +13,7 @@ import com.sas.cat_stuff.common.bundlemanager.BundleManager
 import com.sas.cat_stuff.databinding.ActivityWebviewBinding
 
 class WebviewActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityWebviewBinding
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -29,10 +30,7 @@ class WebviewActivity : AppCompatActivity() {
 
         binding.webview.apply {
             webViewClient = WebViewClient()
-            settings.apply {
-                javaScriptEnabled = true
-            }
-
+            settings.javaScriptEnabled = true
             loadUrl(url)
         }
     }
@@ -45,11 +43,9 @@ class WebviewActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun openActivity(
-            context: Context,
-            url: String
-        ) = context.startActivity(Intent(context, WebviewActivity::class.java).apply {
-            BundleManager().attachUrl(url).into(this)
-        })
+        fun openActivity(context: Context, url: String) =
+            context.startActivity(Intent(context, WebviewActivity::class.java).apply {
+                BundleManager().attachUrl(url).into(this)
+            })
     }
 }

@@ -12,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/image"
@@ -21,21 +20,21 @@
             android:layout_height="130dp"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_launcher_background"
-            app:url="@{vm.imageUrl}"/>
+            app:url="@{vm.imageUrl}"
+            tools:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@{vm.name}"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
-            tools:text="The Scottish Fold"
-            android:text="@{vm.name}"/>
+            tools:text="The Scottish Fold" />
 
         <TextView
             android:id="@+id/localisation"
@@ -43,11 +42,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="3dp"
+            android:text="@{vm.localisation}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
-            tools:text="From : United Kingdom"
             app:visibleOrGone="@{vm.localisation != null}"
-            android:text="@{vm.localisation}" />
+            tools:text="From : United Kingdom" />
 
         <TextView
             android:id="@+id/description"
@@ -55,10 +54,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:text="@{vm.description}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/localisation"
             app:visibleOrGone="@{vm.description != null}"
-            android:text="@{vm.description}"
             tools:text="The Scottish Fold is a sweet, charming breed. She is an easy cat to live with and to care for. She is affectionate and is comfortable with all members of her family. Her tail should be handled gently. Folds are known for sleeping on their backs, and for sitting with their legs stretched out and their paws on their belly. This is called the Buddha Position." />
 
         <ImageView
@@ -66,12 +65,12 @@
             android:layout_width="70dp"
             android:layout_height="90dp"
             android:layout_margin="10dp"
-            app:visibleOrGone="@{vm.wikipediaUrl != null}"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="@{() -> vm.onWikipediaClick(context)}"
             android:src="@drawable/ic_wikipedia"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description"
-            android:foreground="?android:selectableItemBackground"/>
+            app:visibleOrGone="@{vm.wikipediaUrl != null}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

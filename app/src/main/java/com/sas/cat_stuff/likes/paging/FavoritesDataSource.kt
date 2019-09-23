@@ -23,6 +23,5 @@ class FavoritesDataSource : PageKeyedDataSource<Int, Favorite>() {
         }
     }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Favorite>) {
-    }
+    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Favorite>) = Unit
 }

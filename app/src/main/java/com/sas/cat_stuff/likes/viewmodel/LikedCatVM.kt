@@ -7,5 +7,4 @@ class LikedCatVM : BaseUpdatableVM<Favorite>() {
 
     val imageUrl = data.map { it.image?.url }
 
-
 }

@@ -51,7 +51,5 @@
                 app:visibleOrGone="@{vm.infoButtonVisibility}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </com.sas.cat_stuff.home.card.view.DoubleClickCardView>
 </layout>
