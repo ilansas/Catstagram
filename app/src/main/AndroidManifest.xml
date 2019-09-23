@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".likes.activity.LikesActivity" />
+        <activity android:name=".webview.WebviewActivity" />
     </application>
 
 </manifest>
