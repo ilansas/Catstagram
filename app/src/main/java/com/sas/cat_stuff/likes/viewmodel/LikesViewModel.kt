@@ -5,7 +5,7 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.sas.cat_stuff.common.viewmodel.BaseAndroidVM
 import com.sas.cat_stuff.likes.paging.FavoritesDataSourceFactory
-import com.sas.data.model.Favorite
+import com.sas.core.domain.Favorite
 
 class LikesViewModel : BaseAndroidVM() {
 

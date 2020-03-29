@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.sas.cat_stuff.R
 import com.sas.cat_stuff.common.viewmodel.ViewModelFactory
 import com.sas.cat_stuff.databinding.ActivityMainBinding
 import com.sas.cat_stuff.databinding.CatCardBinding
@@ -16,8 +17,7 @@ import com.sas.cat_stuff.home.card.viewmodel.CatCardVM
 import com.sas.cat_stuff.home.viewmodel.HomeViewModel
 import com.sas.cat_stuff.likes.activity.LikesActivity
 import com.sas.cat_stuff.util.pop
-import com.sas.data.model.Image
-
+import com.sas.core.domain.Image
 
 class HomeActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener, CatCardVM.OnInfoClickListener {
 
@@ -58,12 +58,12 @@ class HomeActivity : AppCompatActivity(), CatCardVM.OnDoubleClickListener, CatCa
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(com.sas.cat_stuff.R.menu.option_menu, menu)
+        menuInflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == com.sas.cat_stuff.R.id.likes) {
+        if (item?.itemId == R.id.likes) {
             LikesActivity.openActivity(this)
         }
         return super.onOptionsItemSelected(item)

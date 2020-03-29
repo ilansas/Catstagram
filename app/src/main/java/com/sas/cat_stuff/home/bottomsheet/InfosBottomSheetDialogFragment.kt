@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sas.cat_stuff.common.bundlemanager.BundleManager
 import com.sas.cat_stuff.databinding.BottomSheetInfosBinding
-import com.sas.data.model.Image
+import com.sas.core.domain.Image
 
 class InfosBottomSheetDialogFragment : BottomSheetDialogFragment() {
 

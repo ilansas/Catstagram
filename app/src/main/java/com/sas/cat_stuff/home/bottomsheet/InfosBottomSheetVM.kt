@@ -4,7 +4,7 @@ import android.content.Context
 import com.sas.cat_stuff.R
 import com.sas.cat_stuff.common.viewmodel.BaseUpdatableVM
 import com.sas.cat_stuff.webview.WebviewActivity
-import com.sas.data.model.Image
+import com.sas.core.domain.Image
 
 class InfosBottomSheetVM : BaseUpdatableVM<Image>() {
 

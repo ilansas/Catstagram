@@ -7,7 +7,7 @@ import com.sas.cat_stuff.common.viewmodel.BaseUpdatableVM
 import com.sas.cat_stuff.databinding.ItemFavoriteCatCardBinding
 import com.sas.cat_stuff.likes.viewmodel.LikedCatVM
 import com.sas.cat_stuff.util.layoutInflater
-import com.sas.data.model.Favorite
+import com.sas.core.domain.Favorite
 
 class LikesListAdapter : BasePagedListAdapter<Favorite, ItemFavoriteCatCardBinding>(LikedDiffCallback) {
 

@@ -1,7 +1,7 @@
 package com.sas.cat_stuff.likes.paging
 
 import androidx.paging.DataSource
-import com.sas.data.model.Favorite
+import com.sas.core.domain.Favorite
 
 class FavoritesDataSourceFactory : DataSource.Factory<Int, Favorite>() {
 

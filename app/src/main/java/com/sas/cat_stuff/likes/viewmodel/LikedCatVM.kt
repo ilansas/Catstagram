@@ -1,7 +1,7 @@
 package com.sas.cat_stuff.likes.viewmodel
 
 import com.sas.cat_stuff.common.viewmodel.BaseUpdatableVM
-import com.sas.data.model.Favorite
+import com.sas.core.domain.Favorite
 
 class LikedCatVM : BaseUpdatableVM<Favorite>() {
 

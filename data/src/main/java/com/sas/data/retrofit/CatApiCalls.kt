@@ -1,9 +1,9 @@
 package com.sas.data.retrofit
 
-import com.sas.data.model.AddFavorite
-import com.sas.data.model.Favorite
-import com.sas.data.model.Image
-import com.sas.data.model.PostResult
+import com.sas.core.domain.AddFavorite
+import com.sas.core.domain.Favorite
+import com.sas.core.domain.Image
+import com.sas.core.domain.PostResult
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

@@ -3,8 +3,10 @@ package com.sas.cat_stuff.home.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.sas.cat_stuff.common.viewmodel.BaseAndroidVM
-import com.sas.cat_stuff.network.Requester
-import com.sas.data.model.Image
+import com.sas.cat_stuff.framework.NetworkImageDataSource
+import com.sas.core.data.ImageRepository
+import com.sas.core.domain.Image
+import com.sas.core.interactors.GetImagesInteractor
 import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseAndroidVM() {
@@ -13,7 +15,7 @@ class HomeViewModel : BaseAndroidVM() {
 
     fun downloadRandomCatImages() {
         viewModelScope.launch {
-            images.value = Requester.getImages()
+            images.value = GetImagesInteractor(ImageRepository(NetworkImageDataSource()))()
         }
     }
 
